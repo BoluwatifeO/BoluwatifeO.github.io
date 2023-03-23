@@ -1,0 +1,154 @@
+<?xml version = ″1.0″ encoding = ″utf-8″ ?>
+<!DOCTYPE html PUBLIC ″-//W3C//DTD XHTML 1.0 Strict//EN″
+     http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
+<html xmlns = ″http://www.w3.org/1999/xhtml″>
+  <head>
+  <title> B TRAVELS </title>
+   <style>
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333 ;
+  position:fixed;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 30px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111 ;
+}
+
+.active {
+  background-color: blue;
+}
+body {
+  background-image: url("ppp.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 440px;
+ background-position: center;
+}
+</style>
+<script>
+function validateForm() {
+
+    var a = document.forms["myForm"]["fname"].value;
+	var b = document.forms["myForm"]["lname"].value;
+	var c = document.forms["myForm"]["number"].value;
+	var d = document.forms["myForm"]["text"].value;
+	var e = document.forms["myForm"]["rememberMe"].checked;
+	var number = document.getElementById("number");
+	
+	var gender = document.forms["myForm"]["gender"];
+	var gender_checked="false";
+	
+    if (a == "") 
+	{
+        alert("Firstname must be filled out");
+		return false;
+	}	
+	else if (b == "") 
+	{
+        alert("Lastname must be filled");
+		return false;
+	}	
+	else if (c == "") 
+	{
+        alert("In order to give you our reply, you need to fill in your phone number");
+		return false;
+	}
+	else if (d == ""){
+                   alert("Please type your request or complain in the box");
+				   return false;
+                  
+               }
+    
+	else if (e == false) 
+	{
+        alert("Please click Remember Me");
+        return false;
+    }
+	
+		for (i = 0; i < gender.length; i++) 
+	{
+		if (gender[i].checked) 
+		{
+			gender_checked="true";
+		}
+	}
+		if (gender_checked=="false") 
+		{		
+			alert("Please select your gender");
+			return false;
+		}
+	else 
+       alert("Thank you for contacting B Travels. We will get back to you shortly");
+	// Validate numbers
+  var number = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 10) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+</head>
+<body id ="home" >
+
+<ul>
+  <li><a href="HOME.html">HOME</a></li>
+  <li><a href="HOTELS.html">HOTELS</a></li>
+  <li><a href="BOOKING.html">BOOKING</a></li>
+  <li><a class="active" href="CONTACT.html">CONTACT US</a></li>
+</ul>
+<br/>
+<br/>
+<form name="myForm" action="" onsubmit="return validateForm()">
+<br/>
+<br/>
+FIRST NAME: <input type="text" name="fname"><br/> <br/>
+LAST NAME: <input type="text" name="lname"><br/> <br/>
+PHONE NUMBER: <input type="text"  id= "number" name="number" pattern="(?=.*\d).{10,}"><br/> <br/>
+Gender: M<input type="radio" name="gender" value="male" />
+		F<input type="radio" name="gender" value="female" /> <br/> <br/>
+<textarea rows="10" cols="50" name= "text" >
+</textarea>  <br/>
+
+<input type="checkbox" name="rememberMe" /> Remember Me <br/>
+
+<input type="submit" value="Submit"> <br/> <br/>
+</form>
+<p>
+<h1>You can reach us on our social media platforms</h1>
+ <a href ="https://www.gmail.com">
+	  click here to go to gmail </a> <br/>
+ Gmail: Oshunlolabolutyfe@gmail.com   <br/>
+<a href ="https://www.instagram.com/boluwatifealimat/">
+	  click here for our instagram  </a> <br/>
+<img src="thank.png" alt="It has been a pleasure working with you" style="float: right;width:500px;height:200px;"> 
+</p>
+</body>
+</html>
